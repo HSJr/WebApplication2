@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <form method="post" action="/MultiFileUpLoad/Create" enctype="multipart/form-data">
+        請選擇您要上傳的檔案(最大1Mb):
+        <div id="fileArea">
+
+        </div>
+        <input id="Button1" type="button" value="增加一個檔案" onclick="addFileUpLoad()" />
+        <input id="Submit" name="Submit" type="submit" value="上傳檔案" />
+    </form>
+    <h2>@ViewBag.Message</h2>
+    <a href="/MultiFileUpLoad/ShowPhoto">有圖有真相</a>
+
+    <script>
+        var fileArea=document.getElementById("fileArea");
+
+        function addFileUpLoad() {
+            var input = document.createElement("input");
+            var br = document.createElement("br");
+            input.type = "file";
+            input.name = "photo";
+            fileArea.appendChild(input);
+            fileArea.appendChild(br);
+        }
+
+    </script>
+</body>
+</html>

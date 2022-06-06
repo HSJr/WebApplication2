@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <form method="post" action="/FileUpLoad/Create" enctype="multipart/form-data">
+        請選擇您要上傳的檔案(最大1Mb):
+        <input id="photo" name="photo" type="file" />
+        <input id="Submit" name="Submit" type="submit" value="上傳檔案"  />
+    </form>
+    <h2>@ViewBag.Message</h2>
+    <a href="/FileUpLoad/ShowPhoto">有圖有真相</a>
+</body>
+</html>

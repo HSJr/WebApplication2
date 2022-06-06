@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Razor";
+}
+
+@*Razor語法練習-讓HTML頁面使用程式執行動態網頁*@
+@{
+    string name = "John";
+    var name2 = "Kevin";
+    int Math = 85, Eng = 90, Chi = 95;
+
+    bool flage = true;
+    <h2>歡迎@(name2)光臨</h2>
+    <span>歡迎光臨</span>
+    @*@:輸出符號*@
+    @:歡迎 @name 光臨
+    @:歡迎@(name)光臨
+}
+    @*使用@()標註範圍*@
+<h2>歡迎@(name2)光臨</h2>
+<h2>@Math+@Eng+@Chi=@(Math + Eng + Chi)</h2>
+
+@if (flage)
+{
+    <h3>您已登入系統</h3>
+}
+else
+{
+    <h3>您尚未登入系統</h3>
+}
+
+@*使用@{程式碼區塊}*@
+@{
+    string[] NightMarketname = { "瑞豐夜市", "新堀江商圈", "六合夜市", "青年夜市", "花園夜市", "大東夜市", "武聖夜市" };
+
+    <ul>
+        @foreach (var item in NightMarketname)
+        {
+            @*使用@將變數引入*@
+            <li>@item</li>
+        }
+
+    </ul>
+}
+
